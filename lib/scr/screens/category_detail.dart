@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_efinder/scr/helpers/reponsiveness.dart';
+import 'package:flutter_efinder/scr/helpers/responsiveness.dart';
 import 'package:flutter_efinder/scr/helpers/screen_navigation.dart';
 import 'package:flutter_efinder/scr/helpers/style.dart';
 import 'package:flutter_efinder/scr/models/category.dart';
 import 'package:flutter_efinder/scr/providers/product.dart';
+import 'package:flutter_efinder/scr/screens/product_detail.dart';
 import 'package:flutter_efinder/scr/widgets/custom_text.dart';
 import 'package:provider/provider.dart';
-import 'product_detail.dart';
 
 class CategoryDetailScreen extends StatefulWidget {
   final CategoryModel categoryModel;
@@ -55,7 +55,7 @@ class _CategoryDetailScreenState extends State<CategoryDetailScreen>
                   onTap: () {
                     changeScreen(
                         context,
-                        ProductDetail(
+                        ProductDetail2(
                           product: productProvider.productsByCategory[index],
                         ));
                   },
@@ -208,7 +208,7 @@ class _CategoryDetailScreenState extends State<CategoryDetailScreen>
                   onTap: () {
                     changeScreen(
                         context,
-                        ProductDetail(
+                        ProductDetail2(
                           product: productProvider.productsByCategory[index],
                         ));
                   },

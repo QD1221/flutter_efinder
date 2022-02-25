@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_efinder/scr/helpers/reponsiveness.dart';
+import 'package:flutter_efinder/scr/helpers/responsiveness.dart';
 import 'package:flutter_efinder/scr/helpers/screen_navigation.dart';
 import 'package:flutter_efinder/scr/helpers/style.dart';
 import 'package:flutter_efinder/scr/providers/app.dart';
@@ -7,7 +7,7 @@ import 'package:flutter_efinder/scr/providers/center.dart';
 import 'package:flutter_efinder/scr/providers/product.dart';
 import 'package:flutter_efinder/scr/providers/user.dart';
 import 'package:flutter_efinder/scr/screens/cart.dart';
-import 'package:flutter_efinder/scr/screens/centers_search.dart';
+import 'package:flutter_efinder/scr/screens/center_search.dart';
 import 'package:flutter_efinder/scr/screens/login.dart';
 import 'package:flutter_efinder/scr/screens/product_search.dart';
 import 'package:provider/provider.dart';

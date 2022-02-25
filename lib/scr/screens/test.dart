@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_efinder/scr/helpers/reponsiveness.dart';
+import 'package:flutter_efinder/scr/helpers/responsiveness.dart';
 import 'package:flutter_efinder/scr/widgets/custom_navigation_bar.dart';
 
 

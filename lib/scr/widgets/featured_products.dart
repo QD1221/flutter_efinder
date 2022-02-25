@@ -1,6 +1,5 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_efinder/scr/helpers/reponsiveness.dart';
+import 'package:flutter_efinder/scr/helpers/responsiveness.dart';
 import 'package:flutter_efinder/scr/helpers/screen_navigation.dart';
 import 'package:flutter_efinder/scr/providers/product.dart';
 import 'package:flutter_efinder/scr/screens/product_detail.dart';
@@ -23,7 +22,8 @@ class _FeaturedState extends State<Featured> {
       margin: ResponsiveWidget.isSmallScreen(context)
           ? EdgeInsets.only(left: 10, right: 10)
           : EdgeInsets.only(left: 50, right: 50),
-      height: ResponsiveWidget.isSmallScreen(context) ? 200 : 600,
+      height: ResponsiveWidget.isSmallScreen(context) ||
+          ResponsiveWidget.isMediumScreen(context) ? 200 : 500,
       child: ResponsiveWidget.isSmallScreen(context) ||
               ResponsiveWidget.isMediumScreen(context)
           ? ListView.builder(
@@ -37,7 +37,7 @@ class _FeaturedState extends State<Featured> {
                       onTap: () {
                         changeScreen(
                             _,
-                            ProductDetail(
+                            ProductDetail2(
                               product: productProvider.products[index],
                             ));
                       },
@@ -54,15 +54,16 @@ class _FeaturedState extends State<Featured> {
                             Stack(
                               children: [
                                 ClipRRect(
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(10),
-                                        topRight: Radius.circular(10)),
-                                    child: Image.network(
-                                      productProvider.products[index].image,
-                                      height: 100,
-                                      width: 200,
-                                      fit: BoxFit.cover,
-                                    )),
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10)),
+                                  child: Image.network(
+                                    productProvider.products[index].image,
+                                    height: 100,
+                                    width: 200,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                                 Positioned(
                                   top: 10,
                                   right: 10,
@@ -159,7 +160,7 @@ class _FeaturedState extends State<Featured> {
                   onTap: () {
                     changeScreen(
                       context,
-                      ProductDetail(
+                      ProductDetail2(
                         product: productProvider.products[index],
                       ),
                     );

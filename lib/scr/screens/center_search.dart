@@ -4,11 +4,12 @@ import 'package:flutter_efinder/scr/helpers/style.dart';
 import 'package:flutter_efinder/scr/providers/app.dart';
 import 'package:flutter_efinder/scr/providers/product.dart';
 import 'package:flutter_efinder/scr/providers/center.dart';
-import 'package:flutter_efinder/scr/screens/center_detail_1.dart';
 import 'package:flutter_efinder/scr/widgets/center_item.dart';
 import 'package:flutter_efinder/scr/widgets/custom_text.dart';
 import 'package:flutter_efinder/scr/widgets/loading.dart';
 import 'package:provider/provider.dart';
+
+import 'center_detail.dart';
 
 class CentersSearchScreen extends StatelessWidget {
   @override
@@ -77,23 +78,20 @@ class CentersSearchScreen extends StatelessWidget {
                   itemCount: centerProvider.searchedCenters.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
-                        onTap: () async {
-                          app.changeLoading();
-                          await productProvider.loadProductsByCenter(
-                              centerId: centerProvider
-                                  .searchedCenters[index].id);
-                          app.changeLoading();
+                      onTap: () async {
+                        await productProvider.loadProductsByCenter(
+                            centerId: centerProvider.searchedCenters[index].id);
 
-                          changeScreen(
-                              context,
-                              CenterScreen(
-                                centerModel: centerProvider
-                                    .searchedCenters[index],
-                              ));
-                        },
-                        child: CenterItem(
-                            center:
-                                centerProvider.searchedCenters[index]));
+                        changeScreen(
+                          context,
+                          CenterDetail(
+                            centerModel: centerProvider.searchedCenters[index],
+                          ),
+                        );
+                      },
+                      child: CenterItem(
+                          center: centerProvider.searchedCenters[index]),
+                    );
                   }),
     );
   }

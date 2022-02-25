@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_efinder/scr/helpers/reponsiveness.dart';
+import 'package:flutter_efinder/scr/helpers/responsiveness.dart';
 import 'package:flutter_efinder/scr/helpers/style.dart';
 import 'package:flutter_efinder/scr/models/center.dart';
 import 'package:flutter_efinder/scr/providers/product.dart';
@@ -9,10 +9,9 @@ class CenterItem extends StatelessWidget {
   final CenterModel center;
 
   const CenterItem({Key key, this.center}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
-    
     final productProvider = Provider.of<ProductProvider>(context);
 
     return ResponsiveWidget.isSmallScreen(context)

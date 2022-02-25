@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_efinder/scr/helpers/reponsiveness.dart';
+import 'package:flutter_efinder/scr/helpers/responsiveness.dart';
 import 'package:flutter_efinder/scr/helpers/screen_navigation.dart';
 import 'package:flutter_efinder/scr/helpers/style.dart';
 import 'package:flutter_efinder/scr/providers/app.dart';
@@ -11,7 +11,7 @@ import 'package:flutter_efinder/scr/providers/product.dart';
 import 'package:flutter_efinder/scr/providers/center.dart';
 import 'package:flutter_efinder/scr/providers/user.dart';
 import 'package:flutter_efinder/scr/screens/category_detail.dart';
-import 'package:flutter_efinder/scr/screens/center_detail_2.dart';
+import 'package:flutter_efinder/scr/screens/center_detail.dart';
 import 'package:flutter_efinder/scr/widgets/category_item.dart';
 import 'package:flutter_efinder/scr/widgets/center_item.dart';
 import 'package:flutter_efinder/scr/widgets/custom_app_bar.dart';
@@ -244,7 +244,7 @@ class _HomeState extends State<Home> {
                               viewportFraction: 0.45,
                               enlargeCenterPage: true,
                               enlargeStrategy: CenterPageEnlargeStrategy.height,
-                              // enableInfiniteScroll: false,
+                              enableInfiniteScroll: true,
                               // initialPage: 2,
                               autoPlay: true,
                             ),

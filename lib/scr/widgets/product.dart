@@ -4,7 +4,7 @@ import 'package:flutter_efinder/scr/helpers/style.dart';
 import 'package:flutter_efinder/scr/models/products.dart';
 import 'package:flutter_efinder/scr/providers/center.dart';
 import 'package:flutter_efinder/scr/providers/product.dart';
-import 'package:flutter_efinder/scr/screens/center_detail_1.dart';
+import 'package:flutter_efinder/scr/screens/center_detail.dart';
 import 'package:provider/provider.dart';
 
 import 'custom_text.dart';
@@ -102,7 +102,7 @@ class ProductWidget extends StatelessWidget {
                               await productProvider.loadProductsByCenter(
                                   centerId: product.centerId.toString());
                               await centerProvider.loadSingleCenter(centerId: product.centerId.toString());
-                              changeScreen(context, CenterScreen(centerModel: centerProvider.center,));
+                              changeScreen(context, CenterDetail(centerModel: centerProvider.center,));
                             },
                             child: CustomText(text: product.center, color: primary, weight: FontWeight.w300, size: 14,)),
 
